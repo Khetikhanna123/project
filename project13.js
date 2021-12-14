@@ -32,7 +32,7 @@ function setup() {
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
-  arrow = createSprite(380,200,10,50);
+ arrow = createSprite(380,200,10,50);
   
   arrow.addImage(arrowImage);
   arrow.scale = 0.3;
@@ -52,7 +52,7 @@ function draw() {
   
   //moving bow
   bow.y = World.mouseY
-  arrow.y = bow.y
+  //arrow.y = World.mouseY
    // release arrow when space key is pressed
   if (keyDown("space")) {
     createArrow();
@@ -85,10 +85,10 @@ function draw() {
 
 // Creating  arrows for bow
  function createArrow() {
-  var arrow= createSprite(100, 100, 60, 10);
+ var arrow= createSprite(100, 100, 60, 10);
   arrow.addImage(arrowImage);
   arrow.x = 360;
-  arrow.y=bow.y;
+  bow.y = arrow.y 
   arrow.velocityX = -4;
   arrow.lifetime = 100;
   arrow.scale = 0.3;
